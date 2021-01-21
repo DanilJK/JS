@@ -42,7 +42,7 @@ class ItemService {
     }
 
     weightBetween(from: number, to: number): ItemService {
-        this.query.weight = {$gte: from, $lte: to};
+        this.query.weight = {$gte: parseFloat(from), $lte: parseFloat(to)};
         return this;
     }
 }

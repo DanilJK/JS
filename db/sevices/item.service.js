@@ -13,7 +13,7 @@ class ItemService {
             this.query = query;
         }
     }
-    getOne(fields = '*', query = {}) {
+    getOne(fields = '', query = {}) {
         if (query) {
             Object.assign(query, this.query);
         }
@@ -38,7 +38,7 @@ class ItemService {
         return item_model_1.default.exists(query || this.query);
     }
     weightBetween(from, to) {
-        this.query.weight = { $gte: from, $lte: to };
+        this.query.weight = { $gte: parseFloat(from), $lte: parseFloat(to) };
         return this;
     }
 }
