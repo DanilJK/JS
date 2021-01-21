@@ -5,7 +5,9 @@ module.exports = async (ctx)=>{
         .weightBetween(weightFrom,weightTo)
         .getMany();
     if(!items)
-        return ctx.status = 500;
+    {
+        console.log("Items Not Found")
+    }
     ctx.status = 200;
     ctx.body = {items}
 }
