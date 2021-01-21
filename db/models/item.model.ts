@@ -4,7 +4,7 @@ const itemSchema:Schema = new Schema({
     type: {
         type: String,
         default: 'default',
-        enum: ['car', 'blonde', 'redhair', 'mistress', 'gey', 'threesome', 'default']
+        enum: ['fruits', 'vegatables', 'meat', 'drinks', 'car', 'default']
     },
     name: {
         type: String,
@@ -36,12 +36,11 @@ itemSchema.pre<ItemBaseDocument>('save', function (next) {
 });
 
 export enum itemType {
-    milf = 'car',
-    blonde = 'blonde',
-    redhair = 'redhair',
-    mistress ='mistress',
-    gey = 'gay',
-    threesome = 'threesome',
+    car = 'car',
+    fruits = 'fruits',
+    vegatables = 'vegatables',
+    meat ='meat',
+    drinks = 'drinks',
     default = 'default',
 }
 export interface Item  {
