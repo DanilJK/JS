@@ -8,8 +8,6 @@ class ItemService {
     constructor(query: string | _FilterQuery<ItemBaseDocument> | null) {
         if (!query) {
             this.query = {};
-        } else if (typeof query === 'string') {
-            this.query._id = query;
         } else {
             this.query = query;
         }

@@ -9,11 +9,7 @@ class ItemService {
         this.query = {};
         if (!query) {
             this.query = {};
-        }
-        else if (typeof query === 'string') {
-            this.query._id = query;
-        }
-        else {
+        }else {
             this.query = query;
         }
     }
