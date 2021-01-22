@@ -13,7 +13,7 @@ class ItemService {
         }
     }
 
-    getOne(fields: string = '*', query: _FilterQuery<ItemBaseDocument> = {}): Promise<ItemBaseDocument | null> {
+    getOne(fields = '', query = {}) {
         if (query) {
             Object.assign(query, this.query);
         }
